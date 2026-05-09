@@ -875,9 +875,19 @@ let   _pendingDl = false;
 
 _sb.auth.onAuthStateChange(async (event, session) => {
   _user = session?.user ?? null;
-  if (event === 'SIGNED_IN' && _pendingDl) {
-    _pendingDl = false;
-    await _checkAndDownload();
+  if (event === 'SIGNED_IN') {
+    const email = session?.user?.email ?? '';
+    const domain = email.split('@')[1];
+    if (email && domain !== 'dcamp.kr') {
+      await _sb.auth.signOut();
+      openAuthModal();
+      _setAuthStatus('dcamp.kr 이메일 계정으로만 이용 가능합니다. 다른 계정으로 로그인하세요.');
+      return;
+    }
+    if (_pendingDl) {
+      _pendingDl = false;
+      await _checkAndDownload();
+    }
   }
 });
 
@@ -901,7 +911,8 @@ async function _checkAndDownload() {
   const domain = email.split('@')[1];
 
   if (domain !== 'dcamp.kr') {
-    _setAuthStatus('dcamp.kr 이메일 계정으로만 신청 가능합니다.');
+    await _sb.auth.signOut();
+    _setAuthStatus('dcamp.kr 이메일 계정으로만 이용 가능합니다. 다른 계정으로 로그인하세요.');
     return;
   }
 

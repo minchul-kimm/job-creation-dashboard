@@ -9,7 +9,7 @@ serve(async (req) => {
   const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
   const serviceKey  = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
   const resendKey   = Deno.env.get("RESEND_API_KEY")!;
-  const appUrl      = Deno.env.get("APP_URL")!;
+  const appUrl      = (Deno.env.get("APP_URL") ?? "https://job-creation-dashboard-swart.vercel.app").replace(/\/$/, "");
 
   const result = (status: string, name = "", msg = "") => {
     const p = new URLSearchParams({ status, app: appUrl });

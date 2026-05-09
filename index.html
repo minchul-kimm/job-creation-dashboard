@@ -935,9 +935,13 @@ async function _checkAndDownload() {
 }
 
 async function signInWithGoogle() {
+  await _sb.auth.signOut();
   await _sb.auth.signInWithOAuth({
     provider: 'google',
-    options: { redirectTo: window.location.href },
+    options: {
+      redirectTo: window.location.href,
+      queryParams: { hd: 'dcamp.kr', prompt: 'select_account' },
+    },
   });
 }
 

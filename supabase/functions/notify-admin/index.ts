@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const CORS = {
+  // TODO: 배포 후 "https://your-vercel-domain.vercel.app" 으로 교체
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
     "authorization, x-client-info, apikey, content-type",
@@ -29,7 +30,7 @@ serve(async (req) => {
 
     const supabase = createClient(supabaseUrl, serviceKey);
     const { data: { user }, error: authError } = await supabase.auth.getUser(
-      auth.replace("Bearer ", "")
+      auth.replace(/^Bearer\s+/i, "")
     );
 
     if (authError || !user?.email) {
@@ -45,7 +46,7 @@ serve(async (req) => {
                || email;
 
     // 도메인 검사
-    if (!email.endsWith("@dcamp.kr")) {
+    if (email.split("@")[1] !== "dcamp.kr") {
       return new Response(
         JSON.stringify({ error: "dcamp.kr 이메일만 신청 가능합니다." }),
         { status: 403, headers: { ...CORS, "Content-Type": "application/json" } }
@@ -78,7 +79,7 @@ serve(async (req) => {
     const approveUrl = `${supabaseUrl}/functions/v1/handle-access?action=approve&token=${token}`;
     const rejectUrl  = `${supabaseUrl}/functions/v1/handle-access?action=reject&token=${token}`;
 
-    await fetch("https://api.resend.com/emails", {
+    const emailRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${resendKey}`,
@@ -115,6 +116,7 @@ serve(async (req) => {
         `,
       }),
     });
+    if (!emailRes.ok) throw new Error(`Resend error: ${emailRes.status}`);
 
     return new Response(JSON.stringify({ ok: true }), {
       headers: { ...CORS, "Content-Type": "application/json" },

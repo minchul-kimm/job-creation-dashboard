@@ -2,8 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const CORS = {
-  // TODO: 배포 후 "https://your-vercel-domain.vercel.app" 으로 교체
-  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Origin": "https://job-creation-dashboard-swart.vercel.app",
   "Access-Control-Allow-Headers":
     "authorization, x-client-info, apikey, content-type",
 };
@@ -86,7 +85,7 @@ serve(async (req) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "noreply@dcamp.kr",
+        from: "onboarding@resend.dev",
         to: adminEmail,
         subject: `[접근 신청] ${name}(${email}) 님이 다운로드 접근을 신청했습니다`,
         html: `

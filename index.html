@@ -885,10 +885,10 @@ _sb.auth.onAuthStateChange(async (event, session) => {
       _setAuthStatus('dcamp.kr 이메일 계정으로만 이용 가능합니다. 다른 계정으로 로그인하세요.');
       return;
     }
-    if (_pendingDl) {
-      _pendingDl = false;
-      await _checkAndDownload();
-    }
+    const wasPending = sessionStorage.getItem('_pendingDl') === '1' || _pendingDl;
+    sessionStorage.removeItem('_pendingDl');
+    _pendingDl = false;
+    if (wasPending) await _checkAndDownload();
   }
 });
 
@@ -936,6 +936,7 @@ async function _checkAndDownload() {
 }
 
 async function signInWithGoogle() {
+  sessionStorage.setItem('_pendingDl', '1');
   await _sb.auth.signOut();
   await _sb.auth.signInWithOAuth({
     provider: 'google',

@@ -68,18 +68,18 @@ serve(async (req) => {
   }
 
   if (action === "approve") {
+    const { error: insertError } = await supabase
+      .from("approved_users")
+      .insert({ email: request.email });
+
+    if (insertError) return htmlPage("오류", "승인 처리 중 오류가 발생했습니다.");
+
     const { error: updateError } = await supabase
       .from("access_requests")
       .update({ status: "approved", processed_at: new Date().toISOString() })
       .eq("token", token);
 
     if (updateError) return htmlPage("오류", "처리 중 오류가 발생했습니다.");
-
-    const { error: insertError } = await supabase
-      .from("approved_users")
-      .insert({ email: request.email });
-
-    if (insertError) return htmlPage("오류", "승인 처리 중 오류가 발생했습니다.");
 
     const emailRes = await fetch("https://api.resend.com/emails", {
       method: "POST",

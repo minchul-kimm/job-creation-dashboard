@@ -77,6 +77,10 @@ serve(async (req) => {
     // 관리자 이메일 발송
     const approveUrl = `${supabaseUrl}/functions/v1/handle-access?action=approve&token=${token}`;
     const rejectUrl  = `${supabaseUrl}/functions/v1/handle-access?action=reject&token=${token}`;
+    // href 속성 안에서는 &를 반드시 &amp;로 이스케이프해야 일부 메일 클라이언트에서
+    // 링크가 깨지지 않음(원본 URL 자체는 그대로 유지, 표시용으로만 이스케이프)
+    const approveUrlHtml = approveUrl.replace(/&/g, "&amp;");
+    const rejectUrlHtml  = rejectUrl.replace(/&/g, "&amp;");
 
     const emailRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -96,12 +100,12 @@ serve(async (req) => {
               일자리 창출 결과 대시보드 다운로드 접근을 신청했습니다.
             </p>
             <div style="margin-top:28px">
-              <a href="${approveUrl}"
+              <a href="${approveUrlHtml}"
                  style="display:inline-block;padding:12px 24px;background:#22C55E;color:#fff;
                         text-decoration:none;border-radius:8px;font-weight:600;font-size:15px">
                 ✅ 승인하기
               </a>
-              <a href="${rejectUrl}"
+              <a href="${rejectUrlHtml}"
                  style="display:inline-block;padding:12px 24px;background:#E63946;color:#fff;
                         text-decoration:none;border-radius:8px;font-weight:600;font-size:15px;
                         margin-left:12px">

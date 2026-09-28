@@ -1032,7 +1032,8 @@ let   _pendingDl = false;
 
 _sb.auth.onAuthStateChange(async (event, session) => {
   _user = session?.user ?? null;
-  if (event === 'SIGNED_IN') {
+  if (event === 'SIGNED_IN' || event === 'INITIAL_SESSION') {
+    if (!session) return;
     const email = session?.user?.email ?? '';
     const domain = email.split('@')[1];
     if (email && domain !== 'dcamp.kr') {

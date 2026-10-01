@@ -166,7 +166,7 @@
   .stbl-lg tbody tr.hl .pill::after,.stbl-lg tbody tr.hl-b .pill::after{color:var(--muted)!important}
   /* 도넛 차트 소제목/라벨을 표 폰트 크기에 맞춰 확대 */
   #tab-overview .donut-title{font-size:16px!important}
-  #tab-overview .panel-title{font-size:15px!important}
+  #tab-overview .panel:has(.donut-wrap) > .panel-title{font-size:17px!important;justify-content:center!important;text-align:center}
   #tab-overview .donut-chart{width:130px!important;height:130px!important}
   #tab-overview .legend-item{font-size:14px!important}
   #tab-overview .legend-val{font-size:15px!important}
@@ -356,7 +356,7 @@
 
   <!-- ══ '25년 대비 '26년 상반기 누적실적 비교 (인포그래픽) ══ -->
   <div class="hbox">
-    <div class="panel-title" style="margin-bottom:8px"><span class="dot p"></span>'25년 대비 '26년 상반기 누적실적 비교 (패밀리사 + Type2 + Type3)</div>
+    <div class="panel-title" style="margin-bottom:8px"><span class="dot g"></span>'25년 대비 '26년 상반기 누적실적 비교 (패밀리사 + Type2 + Type3)</div>
     <div style="font-size:13px;color:var(--text2);font-weight:500;line-height:1.85;margin-bottom:20px;padding-left:18px">
       <div>· 디캠프는 '25년 이래 국민연금 가입자 수 데이터를 기준으로 투자·육성기업과 출자펀드 포트폴리오의 일자리 창출 결과를 집계하고 있습니다(반기 단위 집계하며, 해외기업 등 국민연금 가입자 수 조회 불가한 기업은 조사 제외).</div>
       <div>· '25년 대비 '26년 상반기에 조사 기업 수는 193개사, 누적 창출 일자리는 710명이 증가하였습니다.</div>
@@ -516,7 +516,7 @@
 
   <!-- 전체 합계 강조박스 -->
   <div class="panel" style="border-top:4px solid var(--dark);margin-bottom:22px">
-    <div class="panel-title" style="margin-bottom:18px"><span class="dot p"></span>디캠프 투자·육성 전부터 현재까지의 누적 일자리 창출 현황</div>
+    <div class="panel-title" style="margin-bottom:18px"><span class="dot g"></span>디캠프 투자·육성 전부터 현재까지의 누적 일자리 창출 현황</div>
     <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;justify-content:center">
       <!-- 그룹 1: 시점 변화 (과거 → '26.6월말) -->
       <div style="display:flex;gap:16px;align-items:center">
@@ -596,7 +596,7 @@
     <div class="donut-title" style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:-2px;padding-left:4px">디캠프 투자·육성 전 대비 현재 일자리 증가/유지/감소 기업 현황</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px">
       <div class="panel" style="margin-bottom:0">
-        <div class="panel-title" style="font-size:13px;margin-bottom:12px"><span class="dot g"></span>패밀리사 (501개사)</div>
+        <div class="panel-title" style="margin-bottom:12px">패밀리사 (501개사)</div>
         <div class="donut-wrap" style="gap:16px;padding:4px 0">
           <div class="donut-chart" style="width:110px;height:110px"><canvas id="ch-fam-donut"></canvas></div>
           <div class="legend" style="gap:8px">
@@ -607,7 +607,7 @@
         </div>
       </div>
       <div class="panel" style="margin-bottom:0">
-        <div class="panel-title" style="font-size:13px;margin-bottom:12px"><span class="dot g"></span>Type2 (1,234개사)</div>
+        <div class="panel-title" style="margin-bottom:12px">Type2 (1,234개사)</div>
         <div class="donut-wrap" style="gap:16px;padding:4px 0">
           <div class="donut-chart" style="width:110px;height:110px"><canvas id="ch-t2-donut"></canvas></div>
           <div class="legend" style="gap:8px">
@@ -653,7 +653,7 @@
     <div class="donut-title" style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:-2px;padding-left:4px">'25년 말 대비 현재 일자리 증가/유지/감소 기업 현황</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px">
       <div class="panel" style="margin-bottom:0">
-        <div class="panel-title" style="font-size:13px;margin-bottom:12px"><span class="dot"></span>패밀리사 (501개사)</div>
+        <div class="panel-title" style="margin-bottom:12px">패밀리사 (501개사)</div>
         <div class="donut-wrap" style="gap:16px;padding:4px 0">
           <div class="donut-chart" style="width:110px;height:110px"><canvas id="ch-fam-donut-half"></canvas></div>
           <div class="legend" style="gap:8px">
@@ -664,7 +664,7 @@
         </div>
       </div>
       <div class="panel" style="margin-bottom:0">
-        <div class="panel-title" style="font-size:13px;margin-bottom:12px"><span class="dot"></span>Type2 (1,234개사)</div>
+        <div class="panel-title" style="margin-bottom:12px">Type2 (1,234개사)</div>
         <div class="donut-wrap" style="gap:16px;padding:4px 0">
           <div class="donut-chart" style="width:110px;height:110px"><canvas id="ch-t2-donut-half"></canvas></div>
           <div class="legend" style="gap:8px">

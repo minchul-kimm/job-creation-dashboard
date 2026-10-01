@@ -145,6 +145,11 @@
   .stbl td.num::after{content:" 명";font-size:11px;color:var(--muted);font-weight:500;margin-left:1px}
   .stbl td.num:nth-child(2)::after{content:" 개사"}
   .stbl .pill::after{content:" 명";font-size:11px;color:var(--muted);font-weight:500;margin-left:3px}
+  /* 총괄현황 누적/반기 표 전용 확대 폰트 */
+  .stbl-lg{font-size:16px}
+  .stbl-lg th{font-size:15px}
+  .stbl-lg td{font-size:16px}
+  .stbl-lg td.num::after,.stbl-lg .pill::after{font-size:12px}
 
   /* ── Donut ── */
   .donut-wrap{display:flex;align-items:center;gap:32px;justify-content:center;padding:10px 0}
@@ -535,9 +540,9 @@
     </div>
 
     <!-- 누적 표 + 도넛 2개 (기존 왼쪽 카드 내용을 이 패널로 흡수, 표를 도넛보다 위로) -->
-    <div class="col-table-wrap" style="margin-top:28px;padding-top:20px;border-top:1px dashed var(--border)">
-      <table class="stbl">
-        <thead><tr><th>구분</th><th>기업 수</th><th>디캠프 투자·육성 전</th><th>'26.6월말<br>현재</th><th>증감수</th><th>증감율</th></tr></thead>
+    <div class="col-table-wrap" style="margin-top:20px">
+      <table class="stbl stbl-lg">
+        <thead><tr><th>구분</th><th>기업 수</th><th>디캠프 투자·육성 전</th><th>'26.6월 말 현재</th><th>증감수</th><th>증감율</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>패밀리사</strong></td>
@@ -598,8 +603,8 @@
   <div class="panel" style="margin-bottom:22px">
     <div class="panel-title" style="margin-bottom:18px"><span class="dot p"></span>(참고) '25년 말부터 현재까지 6개월 동안의 일자리 창출 현황</div>
     <div class="col-table-wrap">
-      <table class="stbl">
-        <thead><tr><th>구분</th><th>기업 수</th><th>'25.12월말</th><th>'26.6월말<br>현재</th><th>증감수</th><th>증감율</th></tr></thead>
+      <table class="stbl stbl-lg">
+        <thead><tr><th>구분</th><th>기업 수</th><th>'25.12월말</th><th>'26.6월 말 현재</th><th>증감수</th><th>증감율</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>패밀리사</strong></td>

@@ -534,33 +534,8 @@
       <div style="margin-top:4px">창출된 일자리를 조사 기업 수인 <strong style="font-weight:700">5,372개사</strong>로 나누면, 기업당 평균 <strong style="font-weight:700;color:var(--brand)">23.0명</strong>의 일자리를 창출하였다고 볼 수 있습니다.</div>
     </div>
 
-    <!-- 누적 도넛 2개 + 표 (기존 왼쪽 카드 내용을 이 패널로 흡수) -->
-    <div class="donut-title" style="font-size:14px;font-weight:700;color:var(--text);margin-top:28px;padding-top:20px;border-top:1px dashed var(--border);margin-bottom:-2px;padding-left:4px">디캠프 투자·육성 전 대비 현재 일자리 증가/유지/감소 기업 현황</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px">
-      <div class="panel" style="margin-bottom:0">
-        <div class="panel-title" style="font-size:13px;margin-bottom:12px"><span class="dot g"></span>패밀리사 (501개사)</div>
-        <div class="donut-wrap" style="gap:16px;padding:4px 0">
-          <div class="donut-chart" style="width:110px;height:110px"><canvas id="ch-fam-donut"></canvas></div>
-          <div class="legend" style="gap:8px">
-            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#FF6B35"></div><span class="legend-label">증가</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">278</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#FF6B35;font-weight:600;padding-left:4px">(55%)</span></span></div>
-            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#cbd5e1"></div><span class="legend-label">유지</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">78</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:var(--muted);font-weight:600;padding-left:4px">(16%)</span></span></div>
-            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#6b7280"></div><span class="legend-label">감소</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">145</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#6b7280;font-weight:600;padding-left:4px">(29%)</span></span></div>
-          </div>
-        </div>
-      </div>
-      <div class="panel" style="margin-bottom:0">
-        <div class="panel-title" style="font-size:13px;margin-bottom:12px"><span class="dot g"></span>Type2 (1,234개사)</div>
-        <div class="donut-wrap" style="gap:16px;padding:4px 0">
-          <div class="donut-chart" style="width:110px;height:110px"><canvas id="ch-t2-donut"></canvas></div>
-          <div class="legend" style="gap:8px">
-            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#FF6B35"></div><span class="legend-label">증가</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">793</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#FF6B35;font-weight:600;padding-left:4px">(64%)</span></span></div>
-            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#cbd5e1"></div><span class="legend-label">유지</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">97</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:var(--muted);font-weight:600;padding-left:4px">(8%)</span></span></div>
-            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#6b7280"></div><span class="legend-label">감소</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">344</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#6b7280;font-weight:600;padding-left:4px">(28%)</span></span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-table-wrap" style="margin-top:14px">
+    <!-- 누적 표 + 도넛 2개 (기존 왼쪽 카드 내용을 이 패널로 흡수, 표를 도넛보다 위로) -->
+    <div class="col-table-wrap" style="margin-top:28px;padding-top:20px;border-top:1px dashed var(--border)">
       <table class="stbl">
         <thead><tr><th>구분</th><th>기업 수</th><th>디캠프 투자·육성 전</th><th>'26.6월말<br>현재</th><th>증감수</th><th>증감율</th></tr></thead>
         <tbody>
@@ -591,38 +566,38 @@
         </tbody>
       </table>
     </div>
-    <div style="font-size:12px;color:var(--muted);font-weight:500;padding-left:4px;margin-top:10px">* 패밀리사와 Type2 포트폴리오는 중복 제거</div>
+    <div style="font-size:12px;color:var(--muted);font-weight:500;padding-left:4px;margin-top:10px;margin-bottom:20px">* 패밀리사와 Type2 포트폴리오는 중복 제거</div>
+    <div class="donut-title" style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:-2px;padding-left:4px">디캠프 투자·육성 전 대비 현재 일자리 증가/유지/감소 기업 현황</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px">
+      <div class="panel" style="margin-bottom:0">
+        <div class="panel-title" style="font-size:13px;margin-bottom:12px"><span class="dot g"></span>패밀리사 (501개사)</div>
+        <div class="donut-wrap" style="gap:16px;padding:4px 0">
+          <div class="donut-chart" style="width:110px;height:110px"><canvas id="ch-fam-donut"></canvas></div>
+          <div class="legend" style="gap:8px">
+            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#FF6B35"></div><span class="legend-label">증가</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">278</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#FF6B35;font-weight:600;padding-left:4px">(55%)</span></span></div>
+            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#cbd5e1"></div><span class="legend-label">유지</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">78</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:var(--muted);font-weight:600;padding-left:4px">(16%)</span></span></div>
+            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#6b7280"></div><span class="legend-label">감소</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">145</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#6b7280;font-weight:600;padding-left:4px">(29%)</span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="panel" style="margin-bottom:0">
+        <div class="panel-title" style="font-size:13px;margin-bottom:12px"><span class="dot g"></span>Type2 (1,234개사)</div>
+        <div class="donut-wrap" style="gap:16px;padding:4px 0">
+          <div class="donut-chart" style="width:110px;height:110px"><canvas id="ch-t2-donut"></canvas></div>
+          <div class="legend" style="gap:8px">
+            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#FF6B35"></div><span class="legend-label">증가</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">793</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#FF6B35;font-weight:600;padding-left:4px">(64%)</span></span></div>
+            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#cbd5e1"></div><span class="legend-label">유지</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">97</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:var(--muted);font-weight:600;padding-left:4px">(8%)</span></span></div>
+            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#6b7280"></div><span class="legend-label">감소</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">344</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#6b7280;font-weight:600;padding-left:4px">(28%)</span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- ▌참고: '26년 상반기(6개월) 현황 — 별도 하단 패널 -->
   <div class="panel" style="margin-bottom:22px">
     <div class="panel-title" style="margin-bottom:18px"><span class="dot p"></span>(참고) '25년 말부터 현재까지 6개월 동안의 일자리 창출 현황</div>
-    <div class="donut-title" style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:-2px;padding-left:4px">'25년말 대비 현재 일자리 증가/유지/감소 기업 현황</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px">
-      <div class="panel" style="margin-bottom:0">
-        <div class="panel-title" style="font-size:13px;margin-bottom:12px"><span class="dot"></span>패밀리사 (501개사)</div>
-        <div class="donut-wrap" style="gap:16px;padding:4px 0">
-          <div class="donut-chart" style="width:110px;height:110px"><canvas id="ch-fam-donut-half"></canvas></div>
-          <div class="legend" style="gap:8px">
-            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#FF6B35"></div><span class="legend-label">증가</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">151</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#FF6B35;font-weight:600;padding-left:4px">(30%)</span></span></div>
-            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#cbd5e1"></div><span class="legend-label">유지</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">201</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:var(--muted);font-weight:600;padding-left:4px">(40%)</span></span></div>
-            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#6b7280"></div><span class="legend-label">감소</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">149</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#6b7280;font-weight:600;padding-left:4px">(30%)</span></span></div>
-          </div>
-        </div>
-      </div>
-      <div class="panel" style="margin-bottom:0">
-        <div class="panel-title" style="font-size:13px;margin-bottom:12px"><span class="dot"></span>Type2 (1,234개사)</div>
-        <div class="donut-wrap" style="gap:16px;padding:4px 0">
-          <div class="donut-chart" style="width:110px;height:110px"><canvas id="ch-t2-donut-half"></canvas></div>
-          <div class="legend" style="gap:8px">
-            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#FF6B35"></div><span class="legend-label">증가</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">475</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#FF6B35;font-weight:600;padding-left:4px">(38%)</span></span></div>
-            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#cbd5e1"></div><span class="legend-label">유지</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">390</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:var(--muted);font-weight:600;padding-left:4px">(32%)</span></span></div>
-            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#6b7280"></div><span class="legend-label">감소</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">369</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#6b7280;font-weight:600;padding-left:4px">(30%)</span></span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-table-wrap" style="margin-top:14px">
+    <div class="col-table-wrap">
       <table class="stbl">
         <thead><tr><th>구분</th><th>기업 수</th><th>'25.12월말</th><th>'26.6월말<br>현재</th><th>증감수</th><th>증감율</th></tr></thead>
         <tbody>
@@ -652,7 +627,32 @@
         </tbody>
       </table>
     </div>
-    <div style="font-size:12px;color:var(--muted);font-weight:500;padding-left:4px;margin-top:10px">* 패밀리사와 Type2 포트폴리오는 중복 제거</div>
+    <div style="font-size:12px;color:var(--muted);font-weight:500;padding-left:4px;margin-top:10px;margin-bottom:20px">* 패밀리사와 Type2 포트폴리오는 중복 제거</div>
+    <div class="donut-title" style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:-2px;padding-left:4px">'25년말 대비 현재 일자리 증가/유지/감소 기업 현황</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px">
+      <div class="panel" style="margin-bottom:0">
+        <div class="panel-title" style="font-size:13px;margin-bottom:12px"><span class="dot"></span>패밀리사 (501개사)</div>
+        <div class="donut-wrap" style="gap:16px;padding:4px 0">
+          <div class="donut-chart" style="width:110px;height:110px"><canvas id="ch-fam-donut-half"></canvas></div>
+          <div class="legend" style="gap:8px">
+            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#FF6B35"></div><span class="legend-label">증가</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">151</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#FF6B35;font-weight:600;padding-left:4px">(30%)</span></span></div>
+            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#cbd5e1"></div><span class="legend-label">유지</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">201</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:var(--muted);font-weight:600;padding-left:4px">(40%)</span></span></div>
+            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#6b7280"></div><span class="legend-label">감소</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">149</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#6b7280;font-weight:600;padding-left:4px">(30%)</span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="panel" style="margin-bottom:0">
+        <div class="panel-title" style="font-size:13px;margin-bottom:12px"><span class="dot"></span>Type2 (1,234개사)</div>
+        <div class="donut-wrap" style="gap:16px;padding:4px 0">
+          <div class="donut-chart" style="width:110px;height:110px"><canvas id="ch-t2-donut-half"></canvas></div>
+          <div class="legend" style="gap:8px">
+            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#FF6B35"></div><span class="legend-label">증가</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">475</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#FF6B35;font-weight:600;padding-left:4px">(38%)</span></span></div>
+            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#cbd5e1"></div><span class="legend-label">유지</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">390</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:var(--muted);font-weight:600;padding-left:4px">(32%)</span></span></div>
+            <div class="legend-item" style="font-size:12px"><div class="legend-dot" style="background:#6b7280"></div><span class="legend-label">감소</span><span class="legend-val" style="font-size:13px"><span style="display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums">369</span><span style="display:inline-block;width:44px;text-align:left;font-size:11px;color:#6b7280;font-weight:600;padding-left:4px">(30%)</span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>

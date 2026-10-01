@@ -158,7 +158,7 @@
   .stbl-lg tbody tr td:nth-child(3),
   .stbl-lg tbody tr td:nth-child(4),
   .stbl-lg tbody tr td:nth-child(5){background:#eef2f7!important}
-  .stbl-lg tbody tr td:nth-child(6){background:var(--brand-bg)!important}
+  .stbl-lg tbody tr td:nth-child(6){background:var(--brand-bg)!important;text-align:center!important}
   /* 전체 합계 행: 톤다운 강조(폰트 크기는 유지) */
   .stbl-lg tbody tr.hl td,.stbl-lg tbody tr.hl-b td{background:#e4e7eb!important;color:var(--text)!important;font-size:19px!important;font-weight:800!important;padding:18px 10px!important}
   .stbl-lg tbody tr.hl .pill,.stbl-lg tbody tr.hl-b .pill{font-size:19px!important;font-weight:800!important;color:var(--text)!important}
@@ -639,11 +639,6 @@
             <td class="num">37,435</td><td class="num" style="font-weight:700">37,973</td>
             <td><span class="pill blu">+538</span></td><td style="font-weight:700">+1.4%</td>
           </tr>
-          <tr>
-            <td colspan="6" style="text-align:center;color:var(--muted);font-size:13px;padding:20px;background:#fafafa">
-              Type3는 반기 데이터 미제공(업데이트 주기 상이)
-            </td>
-          </tr>
           <tr class="hl hl-b">
             <td><strong>전체 합계*</strong></td>
             <td class="num">1,567</td>
@@ -653,7 +648,8 @@
         </tbody>
       </table>
     </div>
-    <div style="font-size:12px;color:var(--muted);font-weight:500;padding-left:4px;margin-top:10px;margin-bottom:20px">* 패밀리사와 Type2 포트폴리오는 중복 제거</div>
+    <div style="font-size:12px;color:var(--muted);font-weight:500;padding-left:4px;margin-top:10px">* 패밀리사와 Type2 포트폴리오는 중복 제거</div>
+    <div style="font-size:12px;color:var(--muted);font-weight:500;padding-left:4px;margin-bottom:20px">* Type3는 단년도 데이터를 제공하지 않아 집계하지 않음</div>
     <div class="donut-title" style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:-2px;padding-left:4px">'25년 말 대비 현재 일자리 증가/유지/감소 기업 현황</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px">
       <div class="panel" style="margin-bottom:0">

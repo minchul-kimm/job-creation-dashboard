@@ -228,7 +228,7 @@
   .pic-sub{font-size:13px;color:var(--text2);font-weight:500;margin-top:6px}
   /* ── 누적/'25년 2열 레이아웃 ── */
   .dual-col-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-bottom:20px;align-items:stretch}
-  .dual-col{display:flex;flex-direction:column;gap:14px;background:var(--panel2);border:1.5px solid var(--border-strong);border-radius:18px;padding:18px}
+  .dual-col{display:flex;flex-direction:column;gap:14px;background:linear-gradient(135deg,var(--panel) 0%,#FFFAF6 100%);border:1px solid #FFE8DA;border-top:3px solid var(--brand-light);border-radius:18px;padding:18px}
   /* 총괄 현황 탭: 표 → 도넛 소제목 → 도넛 순서 */
   #tab-overview .dual-col > .col-table-wrap{order:1}
   #tab-overview .dual-col > .donut-title{order:2}
@@ -238,9 +238,9 @@
   #tab-type2 .dual-col > .panel:has(table.stbl){order:1}
   #tab-family .dual-col > .panel:not(:has(table.stbl)),
   #tab-type2 .dual-col > .panel:not(:has(table.stbl)){order:2}
-  .col-head{font-size:14px;font-weight:800;letter-spacing:.3px;padding:12px 18px;border-radius:10px;margin-bottom:2px;display:flex;align-items:center;gap:8px;background:var(--dark);color:#fff}
-  .col-head.cum,.col-head.ann{background:var(--dark);color:#fff}
-  .col-head::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--brand);opacity:1}
+  .col-head{font-size:17px;font-weight:700;letter-spacing:.3px;margin-bottom:8px;display:flex;align-items:center;gap:9px;background:none;color:var(--text)}
+  .col-head.cum,.col-head.ann{background:none;color:var(--text)}
+  .col-head::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--brand);opacity:1;flex-shrink:0}
   .dual-col .panel{background:var(--panel);box-shadow:none;margin-bottom:0;border-radius:12px;border:1px solid var(--border)}
   .col-table-wrap{flex-shrink:0;background:var(--panel);border:1px solid var(--border);border-radius:12px;overflow:hidden}
   .col-chart-wrap{flex:1;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px;min-height:260px;display:flex;flex-direction:column}
@@ -819,10 +819,12 @@
 <!-- ═══════════════════════════ Type3 ═══════════════════════════ -->
 <div id="tab-type3" class="tab-content">
 
-  <div class="col-head cum" style="margin-bottom:14px">디캠프 투자·육성 전부터 현재까지의 누적 일자리 창출 현황</div>
+  <div class="dual-col" style="margin-bottom:22px">
+    <div class="col-head cum">디캠프 투자·육성 전부터 현재까지의 누적 일자리 창출 현황</div>
 
-  <!-- Type3 문장형 KPI -->
-  <div style="text-align:center;font-size:18px;color:var(--text2);font-weight:500;line-height:1.98;padding:2px 2px 14px;margin-bottom:22px">디캠프 출자 모펀드 투자기업 <span style="font-size:27px;font-weight:800;color:var(--brand);letter-spacing:-1px;font-variant-numeric:tabular-nums;line-height:1;margin:0 2px">3,805개사</span>의 고용인원이 <strong style="font-weight:700">투자 전</strong> <strong style="font-weight:700">196,916명</strong> 대비 <strong style="font-weight:700">현재</strong> <strong style="font-weight:700">300,765명</strong>으로 증가(52.7%)하여,<br><span style="font-size:27px;font-weight:800;color:var(--brand);letter-spacing:-1px;font-variant-numeric:tabular-nums;line-height:1;margin:0 2px">103,849명</span>의 일자리를 새롭게 창출하였습니다.</div>
+    <!-- Type3 문장형 KPI -->
+    <div style="text-align:center;font-size:18px;color:var(--text2);font-weight:500;line-height:1.98;padding:2px 2px 14px">디캠프 출자 모펀드 투자기업 <span style="font-size:27px;font-weight:800;color:var(--brand);letter-spacing:-1px;font-variant-numeric:tabular-nums;line-height:1;margin:0 2px">3,805개사</span>의 고용인원이 <strong style="font-weight:700">투자 전</strong> <strong style="font-weight:700">196,916명</strong> 대비 <strong style="font-weight:700">현재</strong> <strong style="font-weight:700">300,765명</strong>으로 증가(52.7%)하여,<br><span style="font-size:27px;font-weight:800;color:var(--brand);letter-spacing:-1px;font-variant-numeric:tabular-nums;line-height:1;margin:0 2px">103,849명</span>의 일자리를 새롭게 창출하였습니다.</div>
+  </div>
 
   <!-- 펀드별 세부 표 -->
   <div class="panel">

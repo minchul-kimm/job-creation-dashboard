@@ -151,16 +151,26 @@
   .stbl-lg td{font-size:16px}
   .stbl-lg td.num::after,.stbl-lg .pill::after{font-size:12px}
   .stbl-lg .pill{font-size:16px}
+  /* 표 경계선을 더 진하게 */
+  .stbl-lg th{border-color:#c3c9d1}
+  .stbl-lg td{border-color:#d6dae0}
   /* 전/후/증감수 3개 열은 같은 맥락(인원 변화 흐름)이므로 배경을 통일, 증감율은 결과값으로 별도 강조 */
   .stbl-lg tbody tr td:nth-child(3),
   .stbl-lg tbody tr td:nth-child(4),
   .stbl-lg tbody tr td:nth-child(5){background:#eef2f7!important}
   .stbl-lg tbody tr td:nth-child(6){background:var(--brand-bg)!important}
-  /* 전체 합계 행: 가장 강조 */
-  .stbl-lg tbody tr.hl td,.stbl-lg tbody tr.hl-b td{background:var(--dark)!important;color:#fff!important;font-size:19px!important;font-weight:800!important;padding:18px 10px!important}
-  .stbl-lg tbody tr.hl .pill,.stbl-lg tbody tr.hl-b .pill{font-size:19px!important;font-weight:800!important;color:#fff!important}
+  /* 전체 합계 행: 톤다운 강조(폰트 크기는 유지) */
+  .stbl-lg tbody tr.hl td,.stbl-lg tbody tr.hl-b td{background:#e4e7eb!important;color:var(--text)!important;font-size:19px!important;font-weight:800!important;padding:18px 10px!important}
+  .stbl-lg tbody tr.hl .pill,.stbl-lg tbody tr.hl-b .pill{font-size:19px!important;font-weight:800!important;color:var(--text)!important}
   .stbl-lg tbody tr.hl td.num::after,.stbl-lg tbody tr.hl-b td.num::after,
-  .stbl-lg tbody tr.hl .pill::after,.stbl-lg tbody tr.hl-b .pill::after{color:rgba(255,255,255,.65)!important}
+  .stbl-lg tbody tr.hl .pill::after,.stbl-lg tbody tr.hl-b .pill::after{color:var(--muted)!important}
+  /* 도넛 차트 소제목/라벨을 표 폰트 크기에 맞춰 확대 */
+  #tab-overview .donut-title{font-size:16px!important}
+  #tab-overview .panel-title{font-size:15px!important}
+  #tab-overview .donut-chart{width:130px!important;height:130px!important}
+  #tab-overview .legend-item{font-size:14px!important}
+  #tab-overview .legend-val{font-size:15px!important}
+  #tab-overview .legend-val>span:last-child{font-size:13px!important}
 
   /* ── Donut ── */
   .donut-wrap{display:flex;align-items:center;gap:32px;justify-content:center;padding:10px 0}
@@ -615,7 +625,7 @@
     <div class="panel-title" style="margin-bottom:18px"><span class="dot p"></span>(참고) '25년 말부터 현재까지 6개월 동안의 일자리 창출 현황</div>
     <div class="col-table-wrap">
       <table class="stbl stbl-lg">
-        <thead><tr><th>구분</th><th>기업 수</th><th>'25.12월말</th><th>'26년 상반기 현재</th><th>증감수</th><th>증감율</th></tr></thead>
+        <thead><tr><th>구분</th><th>기업 수</th><th>'25년 말</th><th>'26년 상반기 현재</th><th>증감수</th><th>증감율</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>패밀리사</strong></td>
@@ -644,7 +654,7 @@
       </table>
     </div>
     <div style="font-size:12px;color:var(--muted);font-weight:500;padding-left:4px;margin-top:10px;margin-bottom:20px">* 패밀리사와 Type2 포트폴리오는 중복 제거</div>
-    <div class="donut-title" style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:-2px;padding-left:4px">'25년말 대비 현재 일자리 증가/유지/감소 기업 현황</div>
+    <div class="donut-title" style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:-2px;padding-left:4px">'25년 말 대비 현재 일자리 증가/유지/감소 기업 현황</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px">
       <div class="panel" style="margin-bottom:0">
         <div class="panel-title" style="font-size:13px;margin-bottom:12px"><span class="dot"></span>패밀리사 (501개사)</div>
